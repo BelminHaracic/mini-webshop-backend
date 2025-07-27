@@ -1,0 +1,29 @@
+[
+  {
+    "id": 3,
+    "name": "iPhone XS",
+    "description": "novo",
+    "price": 150.0,
+    "image": "https://d4n0y8dshd77z.cloudfront.net/listings/69435836/lg/img-1752849492-e7841331ff04.jpeg",
+    "quantity": 1,
+    "date_added": "2025-07-26T19:51:30.526314"
+  },
+  {
+    "id": 4,
+    "name": "iPhone XS Max",
+    "description": "kao NOVO 64 GB",
+    "price": 250.0,
+    "image": "https://d4n0y8dshd77z.cloudfront.net/listings/69476429/lg/img-1753042463-0f131e71c5e8.jpeg",
+    "quantity": 1,
+    "date_added": "2025-07-26T19:52:30.294052"
+  },
+  {
+    "id": 5,
+    "name": "iPhone 12 Mini",
+    "description": "super stanje",
+    "price": 350.0,
+    "image": "https://d4n0y8dshd77z.cloudfront.net/listings/69092430/lg/img-1751643406-2b31920cf0e5.jpeg",
+    "quantity": 1,
+    "date_added": "2025-07-26T19:53:35.669594"
+  }
+]

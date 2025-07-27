@@ -112,10 +112,6 @@ ili
 
 ---
 
-Hvala na korištenju Mini Webshop backenda! 🚀
 
-```
 
-Sad je sve u istom formatu kao tvoj frontend README, uredno, pregledno i spremno za copy-paste direktno u `README.md` backend repozitorija.  
-Javi ako trebaš još nešto!
 ```

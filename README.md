@@ -1,5 +1,4 @@
 
-````markdown
 # ⚙️ Mini Webshop – Backend
 
 Ovo je backend API za **Mini Webshop** aplikaciju, razvijen korištenjem FastAPI frameworka. Backend omogućava upravljanje proizvodima, narudžbama i korisnicima, te komunikaciju sa frontend aplikacijom.

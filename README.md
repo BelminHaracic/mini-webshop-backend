@@ -1,38 +1,34 @@
-Naravno! Evo kompletnog `README.md` fajla za tvoj **backend API** – spremno za **copy-paste**:
 
----
+# 🛒 Mini Webshop Backend API
 
-````markdown
-# 🛒 Mini Webshop API
-
-Ovo je REST API za Mini Webshop aplikaciju. Omogućava upravljanje proizvodima, narudžbama i korisnicima. Backend je razvijen pomoću **Python FastAPI** i povezan sa frontend aplikacijom hostovanom na Firebaseu.
+Ovo je REST API za Mini Webshop aplikaciju. Omogućava upravljanje proizvodima, narudžbama i korisnicima. Backend je razvijen pomoću **Python FastAPI** i hostovan na **Railway platformi**.
 
 ---
 
 ## 🚀 Kako pokrenuti API lokalno
 
-1. **Kloniraj repozitorij:**
+1. Kloniraj repozitorij:
    ```bash
    git clone https://github.com/BelminHaracic/mini-webshop-backend.git
    cd mini-webshop-backend
 ````
 
-2. **Kreiraj virtualno okruženje:**
+2. Kreiraj virtualno okruženje i aktiviraj ga:
 
    ```bash
    python -m venv venv
-   venv\Scripts\activate      # na Windows
+   venv\Scripts\activate      # Windows
    # ili
-   source venv/bin/activate   # na Linux/macOS
+   source venv/bin/activate   # Linux/macOS
    ```
 
-3. **Instaliraj zavisnosti:**
+3. Instaliraj zavisnosti:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Pokreni aplikaciju:**
+4. Pokreni aplikaciju:
 
    ```bash
    uvicorn main:app --reload
@@ -40,58 +36,45 @@ Ovo je REST API za Mini Webshop aplikaciju. Omogućava upravljanje proizvodima, 
 
 ---
 
-## 🔗 API dokumentacija
+## 🔗 Live API URL i dokumentacija
 
-Možeš testirati API putem **Postmana** ili pregledati automatski generisanu dokumentaciju:
-
-* 📘 Swagger UI: [`http://localhost:5000/docs`](http://localhost:5000/docs)
-* 🔬 Redoc: [`http://localhost:5000/redoc`](http://localhost:5000/redoc)
+* **API URL:** [https://mini-webshop-backend-production.up.railway.app](https://mini-webshop-backend-production.up.railway.app)
 
 ---
 
-## 🧪 API funkcionalnosti
+## 🧪 API Endpointi
 
-| Endpoint                     | Metoda | Opis                      |
-| ---------------------------- | ------ | ------------------------- |
-| `/products`                  | GET    | Dohvati sve proizvode     |
-| `/products`                  | POST   | Dodaj novi proizvod       |
-| `/products/{id}`             | PUT    | Uredi proizvod            |
-| `/products/{id}`             | DELETE | Obriši proizvod           |
-| `/orders`                    | GET    | Pregled narudžbi          |
-| `/orders`                    | POST   | Kreiraj narudžbu          |
-| `/orders/{id}`               | PUT    | Promijeni status narudžbe |
-| `/auth/login` *(opcionalno)* | POST   | Login korisnika/admina    |
+| Endpoint                   | Metoda | Opis                      |
+| -------------------------- | ------ | ------------------------- |
+| `/products`                | GET    | Dohvati sve proizvode     |
+| `/products`                | POST   | Dodaj novi proizvod       |
+| `/products/{id}`           | PUT    | Uredi proizvod            |
+| `/products/{id}`           | DELETE | Obriši proizvod           |
+| `/orders`                  | GET    | Dohvati sve narudžbe      |
+| `/orders`                  | POST   | Kreiraj novu narudžbu     |
+| `/orders/{id}`             | PUT    | Promijeni status narudžbe |
+| `/auth/login` (opcionalno) | POST   | Prijava korisnika/admina  |
 
 ---
 
 ## 👤 Vrste korisnika
 
-* 👨‍💼 **Admin**
+* **Admin**
 
-  * Može dodavati, uređivati i brisati proizvode
-  * Ima uvid u sve narudžbe i može mijenjati njihov status
+  * Dodavanje, uređivanje i brisanje proizvoda
+  * Pregled i upravljanje narudžbama
 
-* 🛍️ **Korisnik (Guest)**
+* **Gost (User)**
 
-  * Može pregledavati proizvode i praviti narudžbe
-
----
-
-## 🔐 Admin pristup
-
-Koristi sljedeće kredencijale za testiranje putem Postmana:
-
-* **Username:** `admin`
-* **Password:** `admin123`
+  * Pregled proizvoda
+  * Kreiranje narudžbi
 
 ---
 
-## 🌐 Deployment
+## 🔐 Admin kredencijali za pristup
 
-API se može deployati na:
-
-* 🐍 **Render**, **Railway**, **PythonAnywhere**
-* Ili lokalno putem `ngrok` ako se želi testirati s frontendom
+* Username: `admin`
+* Password: `admin123`
 
 ---
 
@@ -99,31 +82,32 @@ API se može deployati na:
 
 ```
 mini-webshop-backend/
-├── app/                # API moduli i rute
-│   ├── main.py         # Glavna aplikacija
-│   ├── models.py       # Modeli baze podataka
-│   ├── routes/         # Endpoint rute
-│   └── database.py     # Konekcija s bazom
-├── requirements.txt    # Zavistnosti
-└── README.md           # Ovaj dokument
+├── app/
+│   ├── main.py          # Glavni fajl aplikacije
+│   ├── models.py        # Definicija modela baze podataka
+│   ├── routes/          # Definicija API ruta
+│   └── database.py      # Povezivanje sa bazom podataka
+├── requirements.txt     # Lista Python zavisnosti
+└── README.md            # Ovaj fajl
 ```
 
 ---
 
-## 📎 Linkovi
-
-* 🔗 Frontend aplikacija: [Webshop na Firebase](https://<TVOJ-LINK>.web.app)
-* 🔗 API na Postman: [Postman kolekcija](https://www.postman.com/...)
-
----
-
-## 🛠️ Tehnologije
+## 🛠️ Tehnologije korištene
 
 * Python 3.x
 * FastAPI
 * SQLite (ili druga baza)
 * Uvicorn
-* CORS, Axios
+* CORS Middleware
+* Railway platforma za hosting
+
+---
+
+## 📎 Korisni linkovi
+
+* Frontend web shop: [https://mini-webshop.web.app](https://mini-webshop.web.app)
+* API na Railway-u: [https://mini-webshop-backend-production.up.railway.app](https://mini-webshop-backend-production.up.railway.app)
 
 ---
 
@@ -133,7 +117,5 @@ MIT © 2025 [Belmin Haračić](https://github.com/BelminHaracic)
 
 ```
 
----
-
-Ako koristiš **Flask** umjesto FastAPI, mogu ti odmah prilagoditi i Flask verziju. Samo reci.
+Ako ti treba pomoć oko bilo čega drugog, samo reci!
 ```

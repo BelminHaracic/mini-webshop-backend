@@ -1,121 +1,122 @@
 
-# 🛒 Mini Webshop Backend API
+````markdown
+# ⚙️ Mini Webshop – Backend
 
-Ovo je REST API za Mini Webshop aplikaciju. Omogućava upravljanje proizvodima, narudžbama i korisnicima. Backend je razvijen pomoću **Python FastAPI** i hostovan na **Railway platformi**.
+Ovo je backend API za **Mini Webshop** aplikaciju, razvijen korištenjem FastAPI frameworka. Backend omogućava upravljanje proizvodima, narudžbama i korisnicima, te komunikaciju sa frontend aplikacijom.
 
 ---
 
-## 🚀 Kako pokrenuti API lokalno
+## 🚀 Pokretanje aplikacije lokalno
 
-1. Kloniraj repozitorij:
-   ```bash
-   git clone https://github.com/BelminHaracic/mini-webshop-backend.git
-   cd mini-webshop-backend
+Prati ove korake da pokreneš backend lokalno:
+
+```bash
+# 1. Idi u direktorij backend
+cd mini-webshop-backend
+
+# 2. Kreiraj virtualno okruženje i aktiviraj ga
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux/macOS
+source venv/bin/activate
+
+# 3. Instaliraj potrebne pakete
+pip install -r requirements.txt
+
+# 4. Pokreni FastAPI server
+uvicorn main:app --reload
 ````
 
-2. Kreiraj virtualno okruženje i aktiviraj ga:
-
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate      # Windows
-   # ili
-   source venv/bin/activate   # Linux/macOS
-   ```
-
-3. Instaliraj zavisnosti:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Pokreni aplikaciju:
-
-   ```bash
-   uvicorn main:app --reload
-   ```
+Backend će biti dostupan na `http://localhost:5000`.
 
 ---
 
-## 🔗 Live API URL i dokumentacija
+## 🌐 Deploy verzija (Railway)
 
-* **API URL:** [https://mini-webshop-backend-production.up.railway.app](https://mini-webshop-backend-production.up.railway.app)
+Backend API je deployan na Railway i dostupan je na sljedećem URL-u:
 
----
-
-## 🧪 API Endpointi
-
-| Endpoint                   | Metoda | Opis                      |
-| -------------------------- | ------ | ------------------------- |
-| `/products`                | GET    | Dohvati sve proizvode     |
-| `/products`                | POST   | Dodaj novi proizvod       |
-| `/products/{id}`           | PUT    | Uredi proizvod            |
-| `/products/{id}`           | DELETE | Obriši proizvod           |
-| `/orders`                  | GET    | Dohvati sve narudžbe      |
-| `/orders`                  | POST   | Kreiraj novu narudžbu     |
-| `/orders/{id}`             | PUT    | Promijeni status narudžbe |
-| `/auth/login` (opcionalno) | POST   | Prijava korisnika/admina  |
+🔗 [https://mini-webshop-backend-production.up.railway.app](https://mini-webshop-backend-production.up.railway.app)
 
 ---
 
-## 👤 Vrste korisnika
+## ⚙️ Funkcionalnosti
 
-* **Admin**
+API pruža sljedeće funkcionalnosti:
 
-  * Dodavanje, uređivanje i brisanje proizvoda
-  * Pregled i upravljanje narudžbama
-
-* **Gost (User)**
-
-  * Pregled proizvoda
-  * Kreiranje narudžbi
+* 📦 **Upravljanje proizvodima** – CRUD operacije (kreiranje, čitanje, ažuriranje, brisanje)
+* 🛒 **Upravljanje narudžbama** – kreiranje, pregled i ažuriranje statusa narudžbi
+* 🔐 **Autentikacija admin korisnika** – provjera pristupa admin funkcijama
+* 🧩 **Validacija podataka i greške** – odgovarajuće poruke i statusi API poziva
 
 ---
 
-## 🔐 Admin kredencijali za pristup
+## 🔗 API Endpointi
 
-* Username: `admin`
-* Password: `admin123`
+### Proizvodi (`/products`)
 
----
+* `GET /products` – Dohvati listu proizvoda
+* `GET /products/{id}` – Dohvati detalje proizvoda
+* `POST /products` – Kreiraj novi proizvod (admin)
+* `PUT /products/{id}` – Ažuriraj proizvod (admin)
+* `DELETE /products/{id}` – Obriši proizvod (admin)
 
-## 📁 Struktura projekta
+### Narudžbe (`/orders`)
 
-```
-mini-webshop-backend/
-├── app/
-│   ├── main.py          # Glavni fajl aplikacije
-│   ├── models.py        # Definicija modela baze podataka
-│   ├── routes/          # Definicija API ruta
-│   └── database.py      # Povezivanje sa bazom podataka
-├── requirements.txt     # Lista Python zavisnosti
-└── README.md            # Ovaj fajl
-```
+* `GET /orders` – Dohvati listu narudžbi (admin)
+* `GET /orders/{id}` – Dohvati detalje narudžbe (admin)
+* `POST /orders` – Kreiraj novu narudžbu
+* `PUT /orders/{id}` – Ažuriraj status narudžbe (admin)
 
 ---
 
-## 🛠️ Tehnologije korištene
+## 👤 Admin kredencijali (primjer)
 
-* Python 3.x
-* FastAPI
-* SQLite (ili druga baza)
-* Uvicorn
-* CORS Middleware
-* Railway platforma za hosting
+| Korisničko ime | Lozinka  |
+| -------------- | -------- |
+| admin          | admin123 |
 
 ---
 
-## 📎 Korisni linkovi
+## 📁 Povezani repozitoriji
 
-* Frontend web shop: [https://mini-webshop.web.app](https://mini-webshop.web.app)
-* API na Railway-u: [https://mini-webshop-backend-production.up.railway.app](https://mini-webshop-backend-production.up.railway.app)
+📁 **Backend source code:**
+🔗 [https://github.com/BelminHaracic/mini-webshop-backend](https://github.com/BelminHaracic/mini-webshop-backend)
+
+📁 **Frontend source code:**
+🔗 [https://github.com/BelminHaracic/mini-webshop-frontend](https://github.com/BelminHaracic/mini-webshop-frontend)
 
 ---
 
-## 📄 Licenca
+## 🧪 Testiranje API-ja
 
-MIT © 2025 [Belmin Haračić](https://github.com/BelminHaracic)
+API se može testirati putem alata kao što su [Postman](https://www.postman.com/) ili [Insomnia](https://insomnia.rest/).
+
+**Base URL:**
+`https://mini-webshop-backend-production.up.railway.app` (produkcija)
+ili
+`http://localhost:5000` (lokalno)
+
+---
+
+## 📝 Napomene
+
+* Backend je razvijen u FastAPI frameworku s automatski generisanom Swagger dokumentacijom na `/docs`.
+* Deployment je urađen na Railway platformu.
+* Baza podataka može biti lokalna SQLite ili produkcijski DB povezan s Railway.
+
+---
+
+✅ Za pokretanje kompletne aplikacije, ne zaboravi pokrenuti i frontend!
+
+---
+
+Hvala na korištenju Mini Webshop backenda! 🚀
 
 ```
 
-Ako ti treba pomoć oko bilo čega drugog, samo reci!
+Sad je sve u istom formatu kao tvoj frontend README, uredno, pregledno i spremno za copy-paste direktno u `README.md` backend repozitorija.  
+Javi ako trebaš još nešto!
 ```
